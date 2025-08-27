@@ -72,6 +72,7 @@ body {
   line-height: 1;
   margin-bottom: 0.5rem;
   font-family: 'Courier New', monospace;
+  animation: rainbow 3s linear infinite;
 }
 
 /* Time label */
@@ -165,6 +166,18 @@ body {
   .time-separator {
     color: black;
   }
+}
+
+/* Rainbow countdown animation */
+@keyframes rainbow {
+  0% { color: #ff0000; }    /* Red */
+  14% { color: #ff8000; }   /* Orange */
+  28% { color: #ffff00; }   /* Yellow */
+  42% { color: #00ff00; }   /* Green */
+  57% { color: #0080ff; }   /* Blue */
+  71% { color: #8000ff; }   /* Indigo */
+  85% { color: #ff0080; }   /* Violet */
+  100% { color: #ff0000; }  /* Back to Red */
 }
 
 /* Bouncing whip animation */
