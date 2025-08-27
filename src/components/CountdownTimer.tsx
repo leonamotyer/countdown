@@ -34,7 +34,6 @@ const CountdownTimer: React.FC = () => {
 
   return (
     <div className="countdown-container">
-      <h1 className="countdown-title">Countdown</h1>
       <div className="countdown-display">
         <div className="time-unit">
           <span className="time-value">{timeLeft.days.toString().padStart(2, '0')}</span>

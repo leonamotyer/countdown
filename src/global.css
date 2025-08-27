@@ -93,6 +93,7 @@ body {
   line-height: 1;
   align-self: flex-start;
   margin-top: clamp(0.5rem, 2vw, 1rem);
+  animation: rainbow 3s linear infinite;
 }
 
 /* Mobile responsiveness */

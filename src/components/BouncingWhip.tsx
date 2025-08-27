@@ -65,7 +65,7 @@ const BouncingWhip: React.FC = () => {
       alt="Bouncing Whip"
       style={{
         position: 'fixed',
-        width: '480px',
+        width: 'clamp(120px, 30vw, 480px)',
         height: 'auto',
         zIndex: 1,
         pointerEvents: 'none',
