@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
+
 interface Position {
   x: number
   y: number
@@ -61,7 +62,7 @@ const BouncingWhip: React.FC = () => {
   return (
     <img
       ref={whipRef}
-      src="/whip.png"
+      src="whip.png"
       alt="Bouncing Whip"
       onLoad={() => console.log('Whip image loaded successfully')}
       onError={(e) => console.error('Error loading whip image:', e)}
