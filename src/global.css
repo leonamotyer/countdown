@@ -1,0 +1,184 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* App container */
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Countdown container */
+.countdown-container {
+  text-align: center;
+  padding: 20px;
+  max-width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+/* Countdown title */
+.countdown-title {
+  font-size: clamp(2rem, 8vw, 4rem);
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* Countdown display */
+.countdown-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* Time unit */
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: clamp(60px, 15vw, 120px);
+}
+
+/* Time value - Big red numbers */
+.time-value {
+  font-size: clamp(3rem, 15vw, 8rem);
+  font-weight: 700;
+  color: #ff0000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+/* Time label */
+.time-label {
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Time separator */
+.time-separator {
+  font-size: clamp(2rem, 10vw, 5rem);
+  color: #ff0000;
+  font-weight: 700;
+  margin: 0 clamp(0.2rem, 1vw, 0.5rem);
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .countdown-display {
+    gap: clamp(0.3rem, 1.5vw, 0.8rem);
+    flex-wrap: nowrap;
+  }
+  
+  .time-unit {
+    min-width: clamp(40px, 10vw, 60px);
+  }
+  
+  .time-separator {
+    margin-top: clamp(0.3rem, 1.5vw, 0.8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-container {
+    padding: 10px;
+  }
+  
+  .countdown-title {
+    margin-bottom: 1.5rem;
+  }
+  
+  .countdown-display {
+    gap: clamp(0.2rem, 1vw, 0.5rem);
+    flex-wrap: nowrap;
+  }
+  
+  .time-unit {
+    min-width: clamp(35px, 8vw, 50px);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .countdown-title {
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+  
+  .time-value {
+    font-size: clamp(2rem, 10vw, 6rem);
+  }
+  
+  .time-separator {
+    font-size: clamp(1.5rem, 8vw, 4rem);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .time-value {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Print styles */
+@media print {
+  .countdown-container {
+    color: black;
+  }
+  
+  .time-value {
+    color: black;
+  }
+  
+  .time-separator {
+    color: black;
+  }
+}
+
+/* Bouncing whip animation */
+@keyframes whipBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Ensure whip image is properly sized and animated */
+img[src*="whip.png"] {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
