@@ -63,6 +63,8 @@ const BouncingWhip: React.FC = () => {
       ref={whipRef}
       src="/whip.png"
       alt="Bouncing Whip"
+      onLoad={() => console.log('Whip image loaded successfully')}
+      onError={(e) => console.error('Error loading whip image:', e)}
       style={{
         position: 'fixed',
         width: '480px',
@@ -71,7 +73,9 @@ const BouncingWhip: React.FC = () => {
         pointerEvents: 'none',
         userSelect: 'none',
         left: '100px',
-        top: '100px'
+        top: '100px',
+        border: '2px solid red',
+        backgroundColor: 'rgba(255, 0, 0, 0.1)'
       }}
     />
   )
