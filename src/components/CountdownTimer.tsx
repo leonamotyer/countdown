@@ -11,7 +11,7 @@ const CountdownTimer: React.FC = () => {
   useEffect(() => {
     // Set target date to August 28th, 2025, 6:30 PM Mountain Standard Time
     // Create date in local time and convert to UTC properly
-    const targetDate = new Date('2026-06-01T21:40:00') // 9:40 PM MST with timezone offset
+    const targetDate = new Date('2026-06-03T21:40:00') // 9:40 PM MST with timezone offset
 
     const timer = setInterval(() => {
       const now = new Date().getTime()
